@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: move 3s infinite linear alternate;
+            /* alternate - wykona animację od końca do początku (efekt powrotu), można też użyć "reverse" */
+        }
+
+        @keyframes move {
+
+            /* 0 i 100% to domyślnie 0 - tak jak mamy zadeklarowaen przed animacją */
+            0% {}
+
+            10% {
+                background-color: green;
+            }
+
+            30% {
+                margin-left: calc(100% - 200px);
+                /* zatrzymanie animacji bo dla 0% ma 0 i dla 30% */
+            }
+
+            50% {
+                margin-left: calc(100% - 200px);
+                background-color: red;
+            }
+
+            80% {
+                margin-left: 0;
+            }
+
+            90% {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
