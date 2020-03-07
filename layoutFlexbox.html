@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: thistle;
+            font-family: 'open sans', sans-serif;
+            color: white;
+            font-size: 30px;
+        }
+
+        nav {
+            background-color: black;
+            align-self: stretch;
+            padding: 15px 0;
+            /* text-align: center; */
+        }
+
+        header {
+            background-color: tomato;
+            width: 100%;
+            max-width: 1200px;
+            /* align-self: auto; */
+            flex-basis: 25vh;
+            /* nie możemy podać w % bo mamy tylko min-height a nie ogólną */
+        }
+
+        section {
+            display: flex;
+            flex-grow: 1;
+            background-color: teal;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        main {
+            background-color: sandybrown;
+            flex-grow: 1;
+        }
+
+        aside {
+            flex-basis: 30%;
+            min-width: 280px;
+
+        }
+
+        footer {
+            background-color: black;
+            align-self: stretch;
+            flex-basis: 10vh;
+            /* text-align: center; */
+            padding: 15px 0;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                order: -1
+            }
+
+            /* 1 SPOSÓB przejście kolumny do lewej - zajęcie całej szerokości */
+            /* aside {
+                flex-basis: 100%
+            }
+
+            section {
+                flex-wrap: wrap;
+                ;
+            } */
+            /* 2 SPOSÓB */
+            section {
+                flex-direction: column;
+            }
+
+            aside {
+                flex-grow: .5;
+                /* główna treśc ma juz wyżej flex-grow zadeklarowaną na 1 więc deklarujemy również dla aside dla lepszego wyglądu */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>Nawigacja</nav>
+    <header>Header</header>
+    <section>
+        <main>Główna treść</main>
+        <aside>Kolumna</aside>
+    </section>
+    <footer>Stopka</footer>
+</body>
+
+</html>
