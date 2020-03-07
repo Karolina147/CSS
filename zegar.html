@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zegar</title>
+    <style>
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .hand {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            height: 45%;
+            /* 50% rodzica */
+            /* margin top i left - dla position static */
+            /* margin-top: 5%;
+            margin-left: calc(50% - 3px); */
+            width: 6px;
+
+            background-color: black;
+            border-radius: 10% 50% 10% 50%;
+            /* zaokrąglamy 4 krawędzie po kolei */
+            transform-origin: 50% 100%;
+            /* zmieniamy punkt obrotu, wciąż 50%, ale 100 po osi y */
+            transform: rotate(0deg) translateX(-50%);
+            transition: 60s steps(60);
+            /* można ustawić np. linear - w równym czasie bedą zmiany, steps definiuje liczbe kroków */
+        }
+
+        .clock:hover .hand {
+            transform: rotate(200deg) translateX(-50%);
+            /* translateX mimo, że nie jest użyte musi być zapisane, inaczej przeglądarka nadpisze 0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hand"></div>
+    </div>
+</body>
+
+</html>

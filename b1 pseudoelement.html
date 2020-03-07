@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            position: relative;
+            padding: 10px 25px;
+            margin: 100px;
+            font-size: 40px;
+            border-style: none;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        /* w naszym przypadku nie ma znaczenie czy napiszemy after czy before */
+        button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 6px;
+            background-color: black;
+            transition: .7s cubic-bezier(0, 0, 0, 1.3);
+            /* funkcje cubic-bezier najlatwiej sprawdzić w przeglądarce(narzędzie programistyczne) i stamtąd ją skopiować */
+        }
+
+        button:hover::after {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Przycisk</button>
+</body>
+
+</html>
