@@ -1,0 +1,125 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box
+}
+
+.clearfix::after {
+ content: "";
+ clear: both;
+ /* czyścimy floaty - both */
+ display: block;
+ /* żeby zadziałało element zmieniamy na blokowy, bo domyślnie after jest liniowy */
+}
+
+html {
+ font-family: Oswald, sans-serif;
+}
+
+body {
+ overflow-x: hidden;
+ /* wyjeżdżające sekcje pnie spowodują pojawienia się paska w poziomie */
+}
+nav {
+ height: 10vh;
+ background-color: black;
+}
+
+header {
+ height: 70vh;
+ background-color: #12a9bd;
+}
+
+.about,
+.quotes {
+ margin: 90px 0;
+}
+
+.about h1,
+.quotes h1 {
+ font-size: 50px;
+ text-align: center;
+ margin-bottom: 40px;
+}
+
+/* ABOUT */
+.about h2 {
+ background-color:#12a9bd;
+ padding: 20px 0 20px 10vw;
+ font-size: 30px;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ font-weight: normal;
+ margin-bottom: 20px;
+ color: white;
+}
+
+.about img {
+ float: left;
+ padding: 0 30px;
+}
+
+.about p {
+ font-size: 22px;
+ padding-right: 40px;
+ line-height: 2;
+}
+
+.about article {
+ margin-bottom: 30px;
+ transition: 1s;
+}
+
+.about .art2, 
+.about .art4 {
+    transform:translateX(-100vw);
+}
+ 
+.about .art3 {
+    transform:translateX(150vw);
+}
+
+.about .art2.active, 
+.about .art4.active,
+.about .art3.active {
+    transform:translateX(0);
+}
+
+/* QUOTES */
+.quotes {
+ padding: 0 20px;
+}
+
+.quotes p {
+ font-size: 22px;
+ margin: 20px 0;
+}
+
+.quotes p span {
+ color: #12a9bd;
+}
+
+.quotes article {
+ margin-bottom: 60px;
+}
+
+.quotes img {
+ display: block;
+ width: 100%;
+}
+
+.quotes article {
+    transform: scale(0);
+    transition: .8s linear;
+}
+.quotes article.active {
+    transform: scale(1);
+}
+/* Footer */
+footer {
+ line-height: 80px;
+ background-color: #000;
+ text-align: center;
+ color: white;
+ font-size: 22px;
+}
